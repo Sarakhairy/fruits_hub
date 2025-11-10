@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [SvgPicture.asset("assets/images/plant.svg")],
             ),
             SvgPicture.asset("assets/images/logo.svg"),
