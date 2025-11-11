@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/widgets/page_view_item.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({super.key});
+  final PageController controller;
+  const OnBoardingPageView({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: controller,
       children: [
         PageViewItem(
+          isVisible: (controller.hasClients ? controller.page!.round() == 0 : true),
           image: 'assets/images/page_view_item1_image.svg',
           backgroundImage: 'assets/images/page_view_item1_background_image.svg',
           subtitle:
@@ -19,6 +22,7 @@ class OnBoardingPageView extends StatelessWidget {
           ),
         ),
         PageViewItem(
+          isVisible: (controller.hasClients ? controller.page!.round() == 0 : true),
           image: 'assets/images/page_view_item2_image.svg',
           backgroundImage: 'assets/images/page_view_item2_background_image.svg',
           subtitle:
